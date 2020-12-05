@@ -1,0 +1,11 @@
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp3.1/MyfirstApp
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp3.1/MyfirstApp.deps.json
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp3.1/MyfirstApp.runtimeconfig.json
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp3.1/MyfirstApp.runtimeconfig.dev.json
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp3.1/MyfirstApp.dll
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp3.1/MyfirstApp.pdb
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp3.1/MyfirstApp.csprojAssemblyReference.cache
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp3.1/MyfirstApp.AssemblyInfoInputs.cache
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp3.1/MyfirstApp.AssemblyInfo.cs
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp3.1/MyfirstApp.dll
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp3.1/MyfirstApp.pdb
