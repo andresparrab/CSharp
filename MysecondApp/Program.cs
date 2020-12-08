@@ -1,45 +1,205 @@
 ﻿using System;
 
-namespace Secret_number
+namespace OOP
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // variables
-            Random randomGenerator = new Random();
-            int slump_tal = randomGenerator.Next(1, 101);
-            int guessedNumber;
-            int counter = 0;
-            string wrong = "\nGuess again: ";
 
-            System.Console.WriteLine("-------------Welcome to the guessing game --------------------\nTry to guess the number");
-            System.Console.WriteLine("Please enter a number bewteen 1 and 100: ");
+    class car
+    {
+        private string name;
+        private int horsepower;
+        private int[] passengers;
+
+        public car(string _name, int _horsepower)
+        {
+            name = _name;
+            horsepower = _horsepower;
+            passengers = new int[4];
+        }
+        public void run()
+        {
+
+            int temp = 0;
             do
             {
+                System.Console.WriteLine("Choose the option:");
+                System.Console.WriteLine("1. horn ");
+                System.Console.WriteLine("2. board ");
+                System.Console.WriteLine("3. calculate top speed ");
+                System.Console.WriteLine("0. Quit ");
+                temp = int.Parse(Console.ReadLine());
 
-                guessedNumber = int.Parse(Console.ReadLine());
-                counter++;
 
-                 // Conditionals if the guessed number is less than 5 away, then print out getting warm, else not even close :)
-                if (Math.Abs(guessedNumber - slump_tal) < 5)
-                    System.Console.WriteLine("Getting warm..");
+                switch (temp)
+                {
+                    case 1:
+                        horn();
+                        break;
+                    case 2:
+                        board();
+                        break;
+                    case 3:
+                        max_speed();
+                        break;
+                    case 0:
+                        System.Console.WriteLine("Quit the app.");
+                        break;
+                    default:
+                        Console.WriteLine("Wrong input..");
+                        break;
+                }
+            } while (temp != 0);
+        }
+        public void horn()
+        {
+            Console.WriteLine("bilen {0} sounded the horn! ", name);
+        }
+        public void board()
+        {
+            Random random = new Random();
+            for (int x = 0; x < passengers.Length; x++)
+            {
+                int temp = random.Next(50, 100);
+                passengers[x] = temp;
+            }
+            System.Console.WriteLine(" passengers total weight is: {0}  has boarded the vehicle", passengers);
+
+        }
+        public int max_speed()
+        {
+            int kilo = 0;
+            int maxSpeed = horsepower;
+
+            foreach (int passenger in passengers)
+            {
+                kilo += passenger;
+
+            }
+            kilo *= 2;
+            maxSpeed -= kilo;
+            System.Console.WriteLine("The car max speed is {0} km/h", maxSpeed);
+            return maxSpeed;
+        }
+
+    }
+    class DogOwner
+    {
+
+        public string Name;
+        private int Age;
+        private dog[] dogs;
+
+        public DogOwner(string _name, int _age)
+        {
+            Name = _name;
+            Age = _age;
+            dogs = new dog[2];
+
+        }
+
+
+
+
+        public void fetch()
+        {
+            foreach (dog item in dogs)
+            {
+                item.bark();
+            }
+        }
+        public void add_dogs()
+        {
+            dogs[0] = new dog("Jocke", 2, "tax");
+            dogs[1] = new dog("Bosse", 0, "boxer");
+
+        }
+
+        public void show_dogs()
+        {
+            foreach (dog tempDog in dogs)
+            {
+                System.Console.WriteLine(tempDog);
+            }
+        }
+
+        public int calc_age()
+        {
+            int age = 0;
+            foreach (dog temp in dogs)
+            {
+                age += temp.getAge();
+            }
+
+            return age;
+        }
+
+    }
+
+    class dog
+    {
+        public dog(string _name, int _age, string _breed)
+        {
+            name = _name;
+            if (_age < 1)
+            {
+                age = 1;
+            }
+            else
+                age = _age;
+            breed = _breed;
+        }
+        private string name;
+        private int age;
+        private string breed;
+
+        public void bark()
+        {
+            if (age <= 1)
+                System.Console.WriteLine("{0} bark with a small voice ", name);
+            else
+                System.Console.WriteLine("{0} barks like crazy", name);
+        }
+        public int getAge()
+        {
+            return age;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("[dog Name = {0}, Age= {1}, Breed = {2}]", name, age, breed);
+        }
+
+    }
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            System.Console.WriteLine("Enter age :");
+            int age = int.Parse(Console.ReadLine());
+            int money = 15000;
+
+            do
+            {
+                if (money < 20000 | age < 65)
+                {
+                    System.Console.WriteLine("You are saving little");
+                    money += 500;
+                }
                 else
-                    System.Console.WriteLine("Not even close :)");
+                {
+                    System.Console.WriteLine("You are saving a lot");
+                    money += 1000;
+                }
+                age++;
 
-               // Conditionals to evaluate if the guessed number is higher or lower than the secret number
-                if (guessedNumber > slump_tal)
-                    System.Console.WriteLine("The number you have guessed is higher than the secret number! {0}", wrong);
+            } while (money < 20000 && age < 65);
+            System.Console.WriteLine("You are retired by the age of {0}", age);
+            System.Console.WriteLine("You are saved {0} dollars ", money);
+            System.Console.WriteLine("press any key to continue....");
+            Console.ReadKey();
 
-                else if (guessedNumber < slump_tal)
-                    System.Console.WriteLine("The number you have guessed is lower than the secret number! {0}", wrong);
-                else System.Console.WriteLine("Congratulations!!!! you have guessed the secret number!");
-
-            } while (guessedNumber != slump_tal);
-
-            System.Console.WriteLine("Number of guesses was: " + counter);
-
-            Console.ReadKey(true);
         }
     }
+
+
 }
