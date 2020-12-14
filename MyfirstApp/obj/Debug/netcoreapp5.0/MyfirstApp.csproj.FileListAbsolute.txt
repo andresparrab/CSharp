@@ -1,0 +1,16 @@
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp5.0/MyfirstApp
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp5.0/MyfirstApp.deps.json
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp5.0/MyfirstApp.runtimeconfig.json
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp5.0/MyfirstApp.runtimeconfig.dev.json
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp5.0/MyfirstApp.dll
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp5.0/ref/MyfirstApp.dll
+/home/doctor/Programming/C#/Courses/MyfirstApp/bin/Debug/netcoreapp5.0/MyfirstApp.pdb
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.csprojAssemblyReference.cache
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.AssemblyInfoInputs.cache
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.AssemblyInfo.cs
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.csproj.CoreCompileInputs.cache
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.dll
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/ref/MyfirstApp.dll
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.pdb
+/home/doctor/Programming/C#/Courses/MyfirstApp/obj/Debug/netcoreapp5.0/MyfirstApp.genruntimeconfig.cache

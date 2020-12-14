@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "Tc05AVeFhSCBCMBdYxMc0AK48Ck1bk0e7gBcM1Jv8ZUJiD842O87zpH0Q5O9fXmMT7cqBT5UT6ly6YGebT7ftg==",
+  "success": true,
+  "projectFilePath": "/home/doctor/Programming/C#/Courses/gui/gui.csproj",
+  "expectedPackageFiles": [
+    "/home/doctor/.nuget/packages/atksharp/3.22.25.128/atksharp.3.22.25.128.nupkg.sha512",
+    "/home/doctor/.nuget/packages/cairosharp/3.22.25.128/cairosharp.3.22.25.128.nupkg.sha512",
+    "/home/doctor/.nuget/packages/gdksharp/3.22.25.128/gdksharp.3.22.25.128.nupkg.sha512",
+    "/home/doctor/.nuget/packages/giosharp/3.22.25.128/giosharp.3.22.25.128.nupkg.sha512",
+    "/home/doctor/.nuget/packages/glibsharp/3.22.25.128/glibsharp.3.22.25.128.nupkg.sha512",
+    "/home/doctor/.nuget/packages/gtksharp/3.22.25.128/gtksharp.3.22.25.128.nupkg.sha512",
+    "/home/doctor/.nuget/packages/pangosharp/3.22.25.128/pangosharp.3.22.25.128.nupkg.sha512"
+  ],
+  "logs": []
+}

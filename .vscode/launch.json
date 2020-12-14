@@ -1,40 +1,61 @@
 {
-   // Use IntelliSense to find out which attributes exist for C# debugging
-   // Use hover for the description of the existing attributes
-   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-   "version": "0.2.0",
-   "configurations": [
-       {
-           "name": ".NET Second Launch (console)",
-           "type": "coreclr",
-           "request": "launch",
-           "preLaunchTask": "build",
-           "program": "${workspaceFolder}/MysecondApp/bin/Debug/netcoreapp3.1/MysecondApp.dll",
-           "args": [],
-           "cwd": "${workspaceFolder}/MysecondApp",
-           "stopAtEntry": false,
-           "console": "integratedTerminal"
-       },
+  // Use IntelliSense to find out which attributes exist for C# debugging
+  // Use hover for the description of the existing attributes
+  // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Second Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/console1/bin/Debug/net5.0/console1.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/console1",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": ".NET winApp Launch ",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build2",
+      "program": "${workspaceFolder}/console1/bin/Debug/net5.0/wingui.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/wingui",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": ".NET First Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      // If you have changed target frameworks, make sure to update the program path.
+      "program": "${workspaceFolder}/MyfirstApp/bin/Debug/netcoreapp5.0/MyfirstApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/MyfirstApp",
+      // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
+    },
 
-        {
-            "name": ".NET First Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/MyfirstApp/bin/Debug/netcoreapp3.1/MyfirstApp.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/MyfirstApp",
-            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
-            "stopAtEntry": false,
-            "console": "integratedTerminal",
-            
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
-        }
-    ]
+    {
+      "name": ".NET Second gui",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/gui/bin/Debug/netcoreapp5.0/gui.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/gui",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    }
+  ]
 }

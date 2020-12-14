@@ -102,13 +102,16 @@ namespace MyfirstApp
             #endregion
 
             #region loops
-            int startValue = 1;
-            while (startValue <10)
-            {
-                System.Console.WriteLine("Varv som karusellen har åkt : " + startValue);
-                startValue +=1;
-            }
+            // int startValue = 1;
+            // while (startValue < 10)
+            // {
+            //     System.Console.WriteLine("Varv som karusellen har åkt : " + startValue);
+            //     startValue += 1;
+            // }
             #endregion
+
+            int[] mineNumbers = new int[10];
+            System.Console.WriteLine("this is the arra: " + mineNumbers.Length);
 
 
 

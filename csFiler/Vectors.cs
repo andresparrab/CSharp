@@ -31,3 +31,27 @@ namespace vectorer
         }
     }
 }
+
+
+    class Human
+    {
+        // components
+        private int arms = 2, legs = 2, head = 1;
+        //propertyes
+        public string hariColor, name;
+        public int lenght;
+
+        //methods
+        public void Run(int speed)
+        {
+            // logic for run speed
+        }
+        public void Jump()
+        {
+            // logig for jumping
+        }
+        public void Talk(string message)
+        {
+            System.Console.WriteLine(message);
+        }
+    }
