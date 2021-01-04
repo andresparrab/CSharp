@@ -57,5 +57,16 @@
       "stopAtEntry": false,
       "console": "integratedTerminal"
     }
+    {
+      "name": ".NET cons2",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/console2/bin/Debug/net5.0/console2.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/gui",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    }
   ]
 }
