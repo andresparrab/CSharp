@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console1", "console1\consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console2", "console2\console2.csproj", "{E342500B-AD63-44A3-925D-CE00F4A34C3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DartApp", "DartApp\DartApp.csproj", "{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,5 +58,17 @@ Global
 		{E342500B-AD63-44A3-925D-CE00F4A34C3D}.Release|x64.Build.0 = Release|Any CPU
 		{E342500B-AD63-44A3-925D-CE00F4A34C3D}.Release|x86.ActiveCfg = Release|Any CPU
 		{E342500B-AD63-44A3-925D-CE00F4A34C3D}.Release|x86.Build.0 = Release|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Debug|x64.Build.0 = Debug|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Debug|x86.Build.0 = Debug|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Release|x64.ActiveCfg = Release|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Release|x64.Build.0 = Release|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{F989EA3E-16B0-48C7-8169-83FF50FFB6D7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

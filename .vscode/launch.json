@@ -68,5 +68,17 @@
       "stopAtEntry": false,
       "console": "integratedTerminal"
     }
+
+    {
+      "name": "DartApp",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/DartApp/bin/Debug/net5.0/DartApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/gui",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    }
   ]
 }

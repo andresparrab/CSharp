@@ -1,0 +1,16 @@
+/home/doctor/Programming/C#/Courses/DartApp/bin/Debug/net5.0/DartApp
+/home/doctor/Programming/C#/Courses/DartApp/bin/Debug/net5.0/DartApp.deps.json
+/home/doctor/Programming/C#/Courses/DartApp/bin/Debug/net5.0/DartApp.runtimeconfig.json
+/home/doctor/Programming/C#/Courses/DartApp/bin/Debug/net5.0/DartApp.runtimeconfig.dev.json
+/home/doctor/Programming/C#/Courses/DartApp/bin/Debug/net5.0/DartApp.dll
+/home/doctor/Programming/C#/Courses/DartApp/bin/Debug/net5.0/ref/DartApp.dll
+/home/doctor/Programming/C#/Courses/DartApp/bin/Debug/net5.0/DartApp.pdb
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.csprojAssemblyReference.cache
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.AssemblyInfoInputs.cache
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.AssemblyInfo.cs
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.csproj.CoreCompileInputs.cache
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.dll
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/ref/DartApp.dll
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.pdb
+/home/doctor/Programming/C#/Courses/DartApp/obj/Debug/net5.0/DartApp.genruntimeconfig.cache
