@@ -29,7 +29,7 @@ namespace console2
             System.Console.WriteLine(personer.Count);
 
 
-            //Exercise modul 2 exercise List<T>
+            //Exercise modul 2 exercise List<T> right?
 
             System.Console.WriteLine("this is the countperson:\n");
 
