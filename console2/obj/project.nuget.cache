@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Dh1ShSqxoA450JogsB7Zw4YGzIYkxWlGjw0ygBJKx3tA63yB0B/AR81kKtrlnBiKbkbn06Y0rfsh87LpY613BQ==",
+  "dgSpecHash": "IXBhapZAmoVtwdQ1YPRc25/GNA8q0kYM14V/wT01lULYIo4Rv9Gt01KDo1ftKvvp4DsF0SfQ1geYuUTvcrX23Q==",
   "success": true,
   "projectFilePath": "/home/doctor/Programming/C#/Courses/console2/console2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/doctor/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

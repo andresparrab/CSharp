@@ -3,23 +3,149 @@ using System.Collections.Generic;
 
 namespace DartApp
 {
+    static class DartBoard
+    {
+        private static int[] dartBoard = { 20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5 };
+        public static int aim()
+        {
+            Random randomizer = new Random();
+            int number = randomizer.Next(1,21);
+           return  aim(number);
+        }
+        public static int aim(int number)
+        {
+            Random randomizer = new Random();
+            int[] ProbabilitiesValues = { 5, 15, 60 };
+            int myProbability = ProbabilitiesValues[randomizer.Next(0, ProbabilitiesValues.Length)];
+            int[] positiveNegative = { -1, 1 };
+            int previousOrNext = positiveNegative[randomizer.Next(0, positiveNegative.Length)];
+            int hitNumber = number;
+
+            if (myProbability == 60)
+            {
+
+                System.Console.WriteLine("Aimend number {0} probability : {1}, you hit the number", hitNumber, myProbability);
+                // return hitNumber;
+            }
+            else if (myProbability == 15)
+            {
+                int indexOfNumber = Array.IndexOf(dartBoard, number);
+
+                if (number == 20)
+                {
+                    hitNumber = dartBoard[indexOfNumber + 1];
+                }
+                else if (number == 5)
+                {
+                    int[] SecondlastAndBegining = {dartBoard.Length-2, 0};
+                    previousOrNext = SecondlastAndBegining[randomizer.Next(0,SecondlastAndBegining.Length)];
+                    System.Console.WriteLine("Thi is the value of previousNext {0}", previousOrNext);
+                    System.Console.WriteLine("This is when is 5: {0}", dartBoard[previousOrNext]);
+                    hitNumber = dartBoard[indexOfNumber - 1];
+                }
+                else
+                {
+                    hitNumber = dartBoard[indexOfNumber + previousOrNext];
+                }
+
+                System.Console.WriteLine("Aimend number {0} probability : {1}, number hit is {2}", number, myProbability, hitNumber);
+                return hitNumber;
+            }
+            else if (myProbability == 5)
+            {
+                int randomIndex = randomizer.Next(0, dartBoard.Length);
+                string[] posibleValues = { randomIndex.ToString(), "out" };
+                string inOrOut = posibleValues[randomizer.Next(0, posibleValues.Length)];
+                if (inOrOut != "out")
+                {
+                    hitNumber = dartBoard[randomIndex];
+                    System.Console.WriteLine("Aimend number {0} probability : {1} you hit the numbner {2}", number, myProbability, hitNumber);
+                    return hitNumber;
+                }
+                else
+                {
+                    System.Console.WriteLine("Aimend number {0} probability : {1} you hit OUTSIDE THE BOARD!!", number, myProbability);
+                    return 0;
+                }
+
+
+            }
+            return hitNumber;
+        }
+        public static void printBoard()
+        {
+            System.Console.WriteLine(string.Join("|", dartBoard));
+        }
+
+    }
     class Player
     {
         public string name { get; set; }
-        // public List<int> turns { get; set; }
-        public List<int> turns = new List<int>();
-        public void CalculatePoints()
+        private List<int[]> scoresPerTurn = new List<int[]>();
+
+        private List<Turns> turns = new List<Turns>();
+
+        public void Add_turn(int first, int second, int third)
         {
+            // Add new turn to the list
+
+            Turns newTurns = new Turns();
+            newTurns.first = first;
+            newTurns.second = second;
+            newTurns.third = third;
+            turns.Add(newTurns);
+            System.Console.WriteLine("New turns added {0},{1},{2} :::", newTurns.first, newTurns.second, newTurns.third);
 
         }
-        public void Add_turn()
+
+        public void removeTurn()
+        {
+            turns.RemoveAt(turns.Count -1);
+        }
+        public void clearTurns()
+        {
+            turns.Clear();
+        }
+        public int CalculatePoints()
+        {
+            // Calculate turns
+            int totalPoints = 0;
+            //foreach (int current in scoresPerTurn)
+            foreach (Turns current in turns)
+                totalPoints += current.Get_score();
+            return totalPoints;
+        }
+        public void Print_turns()
         {
 
+            int[] turSet = new int[3];
+            foreach (Turns current in turns)
+            {
+                turSet[0] = current.first;
+                turSet[1] = current.second;
+                turSet[2] = current.third;
+                scoresPerTurn.Add(turSet);
+                System.Console.WriteLine("|{0}|", string.Join(",", turSet));
+            }
+
+        }
+    }
+
+    class Turns
+    {
+        
+        public int first { get; set; }
+        public int second { get; set; }
+        public int third { get; set; }
+        public int Get_score()
+        {
+            int turn_points = first + second + third;
+            return turn_points;
         }
     }
     class Game
     {
-        public List<Player> newPlayers = new List<Player>();
+        private List<Player> newPlayers = new List<Player>();
         public Game()
         {
 
@@ -34,15 +160,111 @@ namespace DartApp
         }
         public void PlayGame()
         {
+            int choice;
             System.Console.WriteLine("Welcome to the awsome Dart game");
+            // The menu:
+            do
+            {
+                System.Console.WriteLine("1. Add new player");
+                System.Console.WriteLine("2. Start the game");
+                System.Console.WriteLine("3. Quit Game");
+                choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        AddPlayer(Console.ReadLine());
+                        break;
+                    case 2:
+                        startGame();
+                        break;
+                    case 3:
+                        System.Console.WriteLine("exiting ....");
+                        break;
+                    default:
+                        System.Console.WriteLine(" Please enter a valid choice");
+                        break;
+                }
+            } while (choice != 3);
 
         }
-        public void prinplayers()
+
+        private void startGame()
         {
-            foreach (Player tname in newPlayers)
-                System.Console.WriteLine(" the players are -------------->>>>>>>>>>>> : {0}", tname.name);
-        }
+            string newThrow = "";
+            int throw1 = 0;
+            int throw2 = 0;
+            int throw3 = 0;
+            DartBoard.printBoard();
+            int counter = 0;
+            do
+            {
+                // System.Console.WriteLine("this is the countert before the for loop {0} ", counter);
 
+                for (int i = 0; i < newPlayers.Count; i++)
+                {
+
+
+                    System.Console.WriteLine("Current player -----{0}----- ", newPlayers[i].name.ToUpper());
+
+
+                    newThrow = Console.ReadLine();
+
+                    if (newThrow != "")
+                    {
+
+                        throw1 = DartBoard.aim(int.Parse(newThrow));
+                        newThrow = Console.ReadLine();
+                        throw2 = DartBoard.aim(int.Parse(newThrow));
+                        newThrow = Console.ReadLine();
+                        throw3 = DartBoard.aim(int.Parse(newThrow));
+                        newPlayers[i].Add_turn(throw1, throw2, throw3);
+                        counter = newPlayers[i].CalculatePoints();
+                        //newPlayers[i].Print_turns();
+                        System.Console.WriteLine("Total points: {0} ", counter);
+
+
+                    }
+                    else
+                    {
+
+
+                        DartBoard.aim();
+                        throw1 = DartBoard.aim();
+                        throw2 = DartBoard.aim();
+                        throw3 = DartBoard.aim();
+
+
+                        newPlayers[i].Add_turn(throw1, throw2, throw3);
+                        counter = newPlayers[i].CalculatePoints();
+                        System.Console.WriteLine("Total points: {0} ", counter);
+                    }
+
+
+
+
+
+
+
+
+
+                    if (counter == 101)
+                    {
+                        System.Console.WriteLine("{0} win with {1} points", newPlayers[i].name, counter);
+                        newPlayers[i].Print_turns();
+                        newPlayers[i].clearTurns();
+                        break;
+                    }
+                    else if (counter > 101)
+                    {
+                        newPlayers[i].removeTurn();
+                        counter = newPlayers[i].CalculatePoints();
+                        newPlayers[i].Print_turns();
+                    }
+                }
+            }
+            while (counter < 101);
+
+        }
     }
 
     class Program
@@ -50,29 +272,8 @@ namespace DartApp
         static void Main(string[] args)
         {
 
-            Game My_game = new Game();
-            My_game.PlayGame();
-            Player player1 = new Player();
-            player1.name = "Andres";
-            System.Console.WriteLine(player1.name);
-            player1.turns.Add(1);
-            player1.turns.Add(2);
-            player1.turns.Add(3);
-            player1.turns.Add(4);
-            int sum = 0;
-            for (int a = 0; a < player1.turns.Count; a++)
-            {
-                sum += player1.turns[a];
-                System.Console.WriteLine(player1.turns[a]);
-            }
-            System.Console.WriteLine("the sum is : {0}", sum);
-            //string playerName = Console.ReadLine();
-            My_game.AddPlayer(Console.ReadLine());
-            My_game.AddPlayer(Console.ReadLine());
-            My_game.AddPlayer(Console.ReadLine());
-            My_game.AddPlayer(Console.ReadLine());
-            // System.Console.WriteLine("the playername is {0}:::: ", playerName);
-            My_game.prinplayers();
+            Game My_New_Game = new Game();
+            My_New_Game.PlayGame();
         }
     }
 }
