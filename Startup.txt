@@ -1,0 +1,17 @@
+dotnet new -l    // this will show list of projects
+dotnet new sln -o MyApiApp // creates new solution in the root of MyaApp
+
+///// Create new projects under root solution folder
+
+dotnet new console -o MyApiApp.ConsoleApp
+dotnet new webapi -o MyApiApp.WebApi 
+dotnet new classlib -o MyApiApp.Repository 
+dotnet new xunit -o MyApiApp.Tests
+
+// Add project to the solution
+dotnet sln MyApiApp.sln add .\MyApiApp.ConsoleApp\MyApiApp.ConsoleApp.csproj .\MyApiApp.WebApi\MyApiApp.WebApi.csproj .\MyApiApp.Repository\MyApiApp.Repository.csproj .\MyApiApp.Tests\MyApiApp.Tests.csproj 
+
+
+dotnet new console
+dotnet build
+dotnet run
