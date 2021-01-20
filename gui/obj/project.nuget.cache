@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Tc05AVeFhSCBCMBdYxMc0AK48Ck1bk0e7gBcM1Jv8ZUJiD842O87zpH0Q5O9fXmMT7cqBT5UT6ly6YGebT7ftg==",
+  "dgSpecHash": "RdbA3hTbQDJFvPXJShmXy04AgskyXdkvMd0FEiUPwFZgqVg8Pjg2XLzQ7fsmMnY6mMjaiW9MO12GLuces/Rkbw==",
   "success": true,
   "projectFilePath": "/home/doctor/Programming/C#/Courses/gui/gui.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,8 @@
     "/home/doctor/.nuget/packages/giosharp/3.22.25.128/giosharp.3.22.25.128.nupkg.sha512",
     "/home/doctor/.nuget/packages/glibsharp/3.22.25.128/glibsharp.3.22.25.128.nupkg.sha512",
     "/home/doctor/.nuget/packages/gtksharp/3.22.25.128/gtksharp.3.22.25.128.nupkg.sha512",
-    "/home/doctor/.nuget/packages/pangosharp/3.22.25.128/pangosharp.3.22.25.128.nupkg.sha512"
+    "/home/doctor/.nuget/packages/pangosharp/3.22.25.128/pangosharp.3.22.25.128.nupkg.sha512",
+    "/home/doctor/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

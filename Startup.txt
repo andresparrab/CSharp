@@ -15,3 +15,10 @@ dotnet sln MyApiApp.sln add .\MyApiApp.ConsoleApp\MyApiApp.ConsoleApp.csproj .\M
 dotnet new console
 dotnet build
 dotnet run
+
+
+
+for WINFORMS do this:
+
+mcs wf.cs  -r:System.Windows.Forms.dll  // this will create the wf.exe file
+mono wf.exe                             // run the exe file
