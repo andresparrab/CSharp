@@ -75,10 +75,11 @@ namespace Testing
 
         public void List_animals()
         {
+            int counter = 0;
             System.Console.WriteLine("\nJoppes's pet ares: ");
             foreach (Animals pet in Pets)
             {
-                System.Console.WriteLine(pet);
+                System.Console.WriteLine("{0},{1}", counter++, pet);
                 // System.Console.WriteLine("** {0}, a {1}", pet.animalName(), pet.getBreed());
             }
         }
