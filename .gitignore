@@ -1,4 +1,8 @@
 Testing/bin
 Testing/obj
+obj/
+bin/
+
 **/bin
 **/obj
+**/*/obj

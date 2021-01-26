@@ -4,18 +4,17 @@
   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
   "version": "0.2.0",
   "configurations": [
-  
-  {
-    "name": ".NET TEstingShit",
-    "type": "coreclr",
-    "request": "launch",
+    {
+      "name": ".NET TEstingShit",
+      "type": "coreclr",
+      "request": "launch",
       "preLaunchTask": "build",
       "program": "${workspaceFolder}/Testing/bin/Debug/net5.0/Testing.dll",
       "args": [],
       "cwd": "${workspaceFolder}/Testing",
       "stopAtEntry": false,
       "console": "integratedTerminal"
-  },
+    },
     {
       "name": ".NET Second Launch (console)",
       "type": "coreclr",
@@ -31,8 +30,8 @@
       "name": ".NET winApp Launch ",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTatessk": "build2",
-      "program": "${workspaceFolder}/console1/bin/Debug/net5.0/wingui.dll",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/wingui/bin/Debug/net5.0/wingui.dll",
       "args": [],
       "cwd": "${workspaceFolder}/wingui",
       "stopAtEntry": false,
@@ -68,7 +67,7 @@
       "cwd": "${workspaceFolder}/gui",
       "stopAtEntry": false,
       "console": "integratedTerminal"
-    }
+    },
     {
       "name": ".NET cons2",
       "type": "coreclr",
@@ -79,7 +78,7 @@
       "cwd": "${workspaceFolder}/gui",
       "stopAtEntry": false,
       "console": "integratedTerminal"
-    }
+    },
 
     {
       "name": "DartApp",
