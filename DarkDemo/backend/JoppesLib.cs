@@ -91,7 +91,7 @@ namespace JoppesLib
         public string List_animalsUI()
         {
             int counter = 0;
-            string jp = "\nJoppes's pet ares: ";
+            // string jp = "\nJoppes's pet ares: ";
             string petshow = "";
             string[] pets = new string[5];
             foreach (Animals pet in Pets)
@@ -269,12 +269,12 @@ namespace JoppesLib
         {
             string ballReturn = "";
             string.Format("the balls deterioration is: {0} %", ball.quality);
-            if (ball.quality > 20)
+            if (ball.quality > 45)
             {
                 ballReturn = string.Format("Ball's deterioration is: {0} %\n\nJeppe looks at the boll, and find it still god for play", ball.quality);
 
             }
-            else if (ball.quality > 20 && ball.quality <= 35)
+            else if (ball.quality > 20 && ball.quality <= 45)
             {
                 ballReturn = string.Format("Ball's deterioration is: {0} %\n\nJobbe looks at the ball, the {1} color is almost gone.", ball.quality, ball.color);
             }
