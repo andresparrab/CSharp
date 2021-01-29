@@ -1,9 +1,12 @@
 ﻿using System;
+
 using System.Collections.Generic;
 
-namespace Testing
+namespace JoppesLib
 {
-    class PetOwner
+
+
+    public class PetOwner
     {
         public int age { get; set; }
         public Ball joppesBall { get; set; }
@@ -83,6 +86,24 @@ namespace Testing
                 System.Console.WriteLine("{0}. {1}", counter++, pet);
                 // System.Console.WriteLine("** {0}, a {1}", pet.animalName(), pet.getBreed());
             }
+        }
+
+        public string List_animalsUI()
+        {
+            int counter = 0;
+            string jp = "\nJoppes's pet ares: ";
+            string petshow = "";
+            string[] pets = new string[5];
+            foreach (Animals pet in Pets)
+            {
+                petshow = String.Format("{0}. {1}\n", counter + 1, pet);
+                pets[counter] = petshow;
+                counter++;
+
+                // System.Console.WriteLine("** {0}, a {1}", pet.animalName(), pet.getBreed());
+            }
+            Console.WriteLine(String.Join("\n", pets));
+            return String.Join("\n", pets);
         }
 
         public void addNewPet()
@@ -165,6 +186,25 @@ namespace Testing
             }
 
         }
+
+        public string FetchUI(string name)
+        {
+            //System.Console.WriteLine("Please enter the name of the pet you want to play:");
+
+            //string petName = (Console.ReadLine().ToLower());
+            //System.Console.WriteLine("petsname is: {0}", petName);
+            string playing = "";
+            for (int i = 0; i < Pets.Count; i++)
+            {
+                if ((Pets[i].animalName()).ToLower() == name)
+                {
+                    playing = Pets[i].InteractUI(joppesBall);
+                }
+
+            }
+            return playing;
+
+        }
         public void Feed()
         {
             System.Console.WriteLine("Please enter the name of the pet you want to feed:");
@@ -183,6 +223,29 @@ namespace Testing
 
             }
         }
+
+        public string FeedUI(string petName, string foodToFeed)
+        {
+            //System.Console.WriteLine("Please enter the name of the pet you want to feed:");
+
+            //string petName = (Console.ReadLine()).ToLower();
+
+            //System.Console.WriteLine("Pleaes enter the food you want to feed {0}: ", petName);
+            //string foodToFeed = "chicken";
+            string feedReturn = "";
+
+            for (int i = 0; i < Pets.Count; i++)
+            {
+                if ((Pets[i].animalName()).ToLower() == petName)
+                {
+                    feedReturn = Pets[i].EatUI(foodToFeed);
+                }
+
+            }
+            System.Console.WriteLine("feedUI internal{0}:", petName);
+            return feedReturn;
+        }
+
         public void Check_ball(Ball ball)
         {
             System.Console.WriteLine("the balls deterioration is: {0} %", ball.quality);
@@ -199,6 +262,28 @@ namespace Testing
             {
                 System.Console.WriteLine("Hmmm maybe is time to buy a new ball");
             }
+        }
+
+
+        public string Check_ballUI(Ball ball)
+        {
+            string ballReturn = "";
+            string.Format("the balls deterioration is: {0} %", ball.quality);
+            if (ball.quality > 20)
+            {
+                ballReturn = string.Format("Ball's deterioration is: {0} %\n\nJeppe looks at the boll, and find it still god for play", ball.quality);
+
+            }
+            else if (ball.quality > 20 && ball.quality <= 35)
+            {
+                ballReturn = string.Format("Ball's deterioration is: {0} %\n\nJobbe looks at the ball, the {1} color is almost gone.", ball.quality, ball.color);
+            }
+            else
+            {
+                ballReturn = string.Format("Ball's deterioration is under 20 %\n\nHmmm maybe is time to buy a new ball");
+            }
+
+            return ballReturn;
         }
 
 
@@ -247,6 +332,7 @@ namespace Testing
             return this.breed;
         }
         public abstract void Interact(Ball ball);
+        public abstract string InteractUI(Ball ball);
         public void Eat(string favFood)
         {
             if (fav_food != favFood)
@@ -260,6 +346,35 @@ namespace Testing
             }
 
         }
+
+        public string EatUI(string favFood)
+        {
+            string hungryReturn = "";
+            if (fav_food != favFood)
+            {
+                System.Console.WriteLine("He dosent gets his favorite food");
+                hungryReturn = hungry_animalUI();
+            }
+            else
+            {
+                hungryReturn = string.Format("{0} smiles with a big smile and dives right in to the bowl", this.name);
+                hungry = false;
+            }
+            System.Console.WriteLine("inside eatUI {0}", hungryReturn);
+            return hungryReturn;
+
+        }
+
+
+        public virtual string hungry_animalUI()
+        {
+            string hungryA = "";
+            hungryA = string.Format("{0} frowns but have not choice than to eat.", this.name);
+            System.Console.WriteLine("inside hungryAnimaluiIII: {0}", hungryA);
+            return hungryA;
+
+        }
+
         public virtual void hungry_animal()
         {
             System.Console.WriteLine("{0} frowns but have not choice than to eat.", this.name);
@@ -285,6 +400,13 @@ namespace Testing
             ball.Lower_quality(20);
             System.Console.WriteLine("{0 } runs tirelessly after the  {1} color ball, bite it and runs back to Joppe", this.name, ball.color);
         }
+        public override string InteractUI(Ball ball)
+        {
+            ball.Lower_quality(20);
+            System.Console.WriteLine("{0 } runs tirelessly after the  {1} color ball, bite it and runs back to Joppe", this.name, ball.color);
+            string catplay = string.Format("{0 } runs tirelessly after the  {1} color ball, bite it and runs back to Joppe", this.name, ball.color);
+            return catplay;
+        }
         public override string ToString()
         {
             return string.Format("{0} is a {1} Dog , and is {2} years old", name, breed, age);
@@ -305,12 +427,21 @@ namespace Testing
             ball.Lower_quality(10);
             System.Console.WriteLine("{0 } runs happily after the {1} color ball, bite it and runs back to Joppe", this.name, ball.color);
         }
+
+        public override string InteractUI(Ball ball)
+        {
+            ball.Lower_quality(10);
+            System.Console.WriteLine("{0 } runs happily after the {1} color ball, bite it and runs back to Joppe", this.name, ball.color);
+            string catplay = string.Format("{0 } runs happily after the {1} color ball, bite it and runs back to Joppe", this.name, ball.color);
+            return catplay;
+        }
+
         public override string ToString()
         {
             return string.Format("{0} is a {1} puppy , and is {2} months old", name, breed, months);
         }
     }
-    class Cat : Animals
+    public class Cat : Animals
     {
         public Cat(string name, int age) : base(name, age)
         {
@@ -326,10 +457,26 @@ namespace Testing
         {
             System.Console.WriteLine("{0} rejects the owners food and goes out to for mouse hunting", this.name);
         }
+
+        public override string hungry_animalUI()
+        {
+            string hungryA = "";
+            hungryA = string.Format("{0} rejects the owners food and goes out to for mouse hunting", this.name);
+            System.Console.WriteLine("inside hungryAnimaluiIII: {0}", hungryA);
+            return hungryA;
+
+        }
         public override void Interact(Ball ball)
         {
             ball.Lower_quality(15);
             System.Console.WriteLine("{0 } chase the {1} ball all around the house", this.name, ball.color);
+        }
+        public override string InteractUI(Ball ball)
+        {
+            ball.Lower_quality(15);
+            System.Console.WriteLine("{0 } chase the {1} ball all around the house", this.name, ball.color);
+            string catplay = string.Format("{0 } chase the {1} ball all around the house", this.name, ball.color);
+            return catplay;
         }
 
         public override string ToString()
@@ -337,7 +484,7 @@ namespace Testing
             return string.Format("{0} is a {1} , and is {2} years old", name, breed, age);
         }
     }
-    class NorwegianForestCat : Cat
+    public class NorwegianForestCat : Cat
     {
         private string Fur_color;
         private bool laid_back;
@@ -348,10 +495,12 @@ namespace Testing
             this.fav_food = "chicken";
             this.breed = "Norwegian Forest cat";
         }
-        public override void Interact(Ball ball)
+        public override string InteractUI(Ball ball)
         {
-            ball.Lower_quality(18);
+            ball.Lower_quality(15);
             System.Console.WriteLine("{0 } just looks at the {1} ball in a bored manner", this.name, ball.color);
+            string catplay = string.Format("{0 } just looks at the {1} ball in a bored manner", this.name, ball.color);
+            return catplay;
         }
         public override string ToString()
         {
@@ -375,37 +524,19 @@ namespace Testing
             ball.Lower_quality(5);
             System.Console.WriteLine("{0} plays with the {1} ball chasing it around with crazy energy", this.name, ball.color);
         }
+
+        public override string InteractUI(Ball ball)
+        {
+            ball.Lower_quality(5);
+            System.Console.WriteLine("{0} plays with the {1} ball chasing it around with crazy energy", this.name, ball.color);
+            string catplay = string.Format("{0} plays with the {1} ball chasing it around with crazy energy", this.name, ball.color);
+            return catplay;
+        }
+
         public override string ToString()
         {
             return string.Format("{0} is a {1} , and is {2} months old", name, breed, months);
         }
     }
 
-
-
-
-
-
-
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-
-            //  ------------------------- Joppes animal family v2 ------------------------------------- //
-            // Create ball instance with color
-            Ball myball = new Ball("blue");
-            // Create the petowner Joppe with give age
-            PetOwner Joppe = new PetOwner(39);
-            Joppe.joppesBall = myball;
-            Joppe.Menu();
-
-            System.Console.WriteLine("end of the line");
-
-
-
-        }
-    }
 }

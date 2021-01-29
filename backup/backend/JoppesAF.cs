@@ -1,8 +1,11 @@
 ﻿using System;
+
 using System.Collections.Generic;
 
-namespace Testing
+namespace backend
 {
+
+
     class PetOwner
     {
         public int age { get; set; }
@@ -381,31 +384,4 @@ namespace Testing
         }
     }
 
-
-
-
-
-
-
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-
-            //  ------------------------- Joppes animal family v2 ------------------------------------- //
-            // Create ball instance with color
-            Ball myball = new Ball("blue");
-            // Create the petowner Joppe with give age
-            PetOwner Joppe = new PetOwner(39);
-            Joppe.joppesBall = myball;
-            Joppe.Menu();
-
-            System.Console.WriteLine("end of the line");
-
-
-
-        }
-    }
 }

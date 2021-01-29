@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0.101</TargetFramework>
+    <PackageId>JoppesLib</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Andres</Authors>
+    <Company>AndresAB</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
