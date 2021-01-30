@@ -1,7 +1,7 @@
 <img src="./joppes_hundarUI.png">
 
-
-Compile the DarkUI app with the reference JoppesLib.dll and target is windows exe file no console<br />
+Naviate to the DarkUI folder <br />
+Compile the DarkUI app with the reference JoppesLib.dll and the target is windows executable file no console in the background<br />
 mcs *.cs -pkg:dotnet -r:JoppesLib.dll -t:winexe<br />
 mono Form1.exe <br />
 <br />
