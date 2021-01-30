@@ -31,19 +31,20 @@ namespace JoppesAF
         {
             //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-             this.panel2 = new System.Windows.Forms.Panel();
-             this.panel3 = new System.Windows.Forms.Panel();
-           this.labelPlayFeed = new System.Windows.Forms.Label();
-             this.label1 = new System.Windows.Forms.Label();
-             this.label2 = new System.Windows.Forms.Label();
-             this.button1 = new System.Windows.Forms.Button();
-             this.button2 = new System.Windows.Forms.Button();
-             this.button3 = new System.Windows.Forms.Button();
-             this.button4 = new System.Windows.Forms.Button();
-             this.buttonCat = new System.Windows.Forms.Button();
-             this.buttonExit = new System.Windows.Forms.Button();
-             this.scroller = new System.Windows.Forms.Panel();
-             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelPlayFeed = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.buttonCat = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonPrintToFile = new System.Windows.Forms.Button();
+            this.scroller = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -57,10 +58,10 @@ namespace JoppesAF
             this.radiobutton1 = new System.Windows.Forms.RadioButton();
             this.radiobutton2 = new System.Windows.Forms.RadioButton();
             this.radiobutton3 = new System.Windows.Forms.RadioButton();
-            
+
             this.panel1.SuspendLayout();
-             this.panel2.SuspendLayout();
-             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -153,7 +154,7 @@ namespace JoppesAF
             this.buttonCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCat.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCat.ForeColor = System.Drawing.Color.White;
-            this.buttonCat.Image = (Image)(new Bitmap(Image.FromFile("cat.png"), new Size(77,75))); //specify size you want
+            this.buttonCat.Image = (Image)(new Bitmap(Image.FromFile("cat.png"), new Size(77, 75))); //specify size you want
             this.buttonCat.Location = new System.Drawing.Point(0, 100);
             this.buttonCat.Name = "buttonCat";
             this.buttonCat.Size = new System.Drawing.Size(163, 90);
@@ -174,7 +175,7 @@ namespace JoppesAF
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = (Image)(new Bitmap(Image.FromFile("cat.png"), new Size(77,75))); //specify size you want
+            this.button1.Image = (Image)(new Bitmap(Image.FromFile("cat.png"), new Size(77, 75))); //specify size you want
             this.button1.Location = new System.Drawing.Point(0, 200);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 90);
@@ -192,7 +193,7 @@ namespace JoppesAF
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = Image.FromFile("kitty.png");
-            this.button2.Location = new System.Drawing.Point(2,300);
+            this.button2.Location = new System.Drawing.Point(2, 300);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 79);
             this.button2.TabIndex = 1;
@@ -307,7 +308,21 @@ namespace JoppesAF
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // // 
-
+            //
+            // // // buttonPrintToFile
+            // // // 
+            this.buttonPrintToFile.FlatAppearance.BorderSize = 0;
+            this.buttonPrintToFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrintToFile.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrintToFile.Location = new System.Drawing.Point(860, 580);
+            this.buttonPrintToFile.Name = "buttonPrintToFile";
+            this.buttonPrintToFile.Size = new System.Drawing.Size(110, 27);
+            this.buttonPrintToFile.TabIndex = 4;
+            this.buttonPrintToFile.Text = "Print to file";
+            this.buttonPrintToFile.UseVisualStyleBackColor = true;
+            this.buttonPrintToFile.Click += new System.EventHandler(this.buttonPrintToFile_Click);
+            // // 
+            //
             // Exit
             // 
             this.buttonExit.FlatAppearance.BorderSize = 0;
@@ -343,7 +358,7 @@ namespace JoppesAF
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "fish";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Click += new System.EventHandler(this.buttonExit_Click); 
+            this.checkBox1.Click += new System.EventHandler(this.buttonExit_Click);
             // // // 
 
             // // // Rariobutton1
@@ -358,7 +373,7 @@ namespace JoppesAF
             this.radiobutton1.TabIndex = 4;
             this.radiobutton1.Text = "fish";
             this.radiobutton1.UseVisualStyleBackColor = true;
-            this.radiobutton1.Click += new System.EventHandler(this.radio_Click); 
+            this.radiobutton1.Click += new System.EventHandler(this.radio_Click);
             //
             //
             // // // Rariobutton2
@@ -431,13 +446,14 @@ namespace JoppesAF
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-           
+
             this.ClientSize = new System.Drawing.Size(980, 619);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.buttonExit);
+            //this.Controls.Add(this.buttonPrintToFile);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPlayFeed);
@@ -445,7 +461,7 @@ namespace JoppesAF
             this.Controls.Add(this.panel1);
             // this.Controls.Add(this.checkBox1);
             // this.Controls.Add(this.checkBox2);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));         
+            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -459,7 +475,7 @@ namespace JoppesAF
             this.panel3.PerformLayout();
             this.scroller.ResumeLayout(false);
             this.scroller.BringToFront();
-            
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -483,14 +499,16 @@ namespace JoppesAF
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonCat;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonPrintToFile;
+
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RadioButton radiobutton1;
         private System.Windows.Forms.RadioButton radiobutton2;
-         private System.Windows.Forms.RadioButton radiobutton3;
-        
+        private System.Windows.Forms.RadioButton radiobutton3;
+
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;

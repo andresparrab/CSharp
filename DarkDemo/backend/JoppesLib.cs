@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.IO;
 using System.Collections.Generic;
 
 namespace JoppesLib
@@ -91,7 +91,7 @@ namespace JoppesLib
         public string List_animalsUI()
         {
             int counter = 0;
-            // string jp = "\nJoppes's pet ares: ";
+
             string petshow = "";
             string[] pets = new string[5];
             foreach (Animals pet in Pets)
@@ -105,6 +105,33 @@ namespace JoppesLib
             Console.WriteLine(String.Join("\n", pets));
             return String.Join("\n", pets);
         }
+
+        public void printToFile()
+        {
+            int counter = 1;
+            System.Console.WriteLine("\nPrinting to file: ");
+            try
+            {
+                using (StreamWriter streamWriter = new StreamWriter("petlist.txt", true))
+                {
+
+                    foreach (Animals pet in Pets)
+                    {
+
+                        streamWriter.WriteLine("{0}. {1}", counter++, pet);
+                    }
+                    streamWriter.Close();
+                }
+            }
+            catch (System.Exception e)
+            {
+
+                System.Console.WriteLine(e.Message);
+            }
+
+        }
+
+
 
         public void addNewPet()
         {
@@ -360,7 +387,7 @@ namespace JoppesLib
                 hungryReturn = string.Format("{0} smiles with a big smile and dives right in to the bowl", this.name);
                 hungry = false;
             }
-            System.Console.WriteLine("inside eatUI {0}", hungryReturn);
+            
             return hungryReturn;
 
         }
@@ -370,7 +397,7 @@ namespace JoppesLib
         {
             string hungryA = "";
             hungryA = string.Format("{0} frowns but have not choice than to eat.", this.name);
-            System.Console.WriteLine("inside hungryAnimaluiIII: {0}", hungryA);
+           
             return hungryA;
 
         }
@@ -462,7 +489,7 @@ namespace JoppesLib
         {
             string hungryA = "";
             hungryA = string.Format("{0} rejects the owners food and goes out to for mouse hunting", this.name);
-            System.Console.WriteLine("inside hungryAnimaluiIII: {0}", hungryA);
+            
             return hungryA;
 
         }
