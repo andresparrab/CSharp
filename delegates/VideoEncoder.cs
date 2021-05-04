@@ -3,39 +3,39 @@ using System.Threading;
 
 namespace delegates
 {
-    public class VideoEncoder
+    public class IVideoEventargs : EventArgs
     {
-        //1. first define the delegate
-        //2. Define the event based on the delegate
-        //3. Raise or publis the event
+        public Video Video { get; set; }
+    }
 
-        //1. The delegate - is just a reference to the method that will be implemented in the subscriber
-        // it defines the "shape" or "signature" of the method on the subsscriber
-        public delegate void VideoEncoderEventhandler(object source, EventArgs args);
-
-        // 2. Defining the event base on the delegate
-        public event VideoEncoderEventhandler VideoEncoded; // this behind the scenes is a list wit pointer to methods that have the shape of the delegate
+    public class VideoEventargs: EventArgs
+    {
+        public Video Video { get; set; }
+    }
+    public class VideoEncoder: IVideoEncoded 
+    {
+        public event EventHandler<VideoEventargs> VideoEncoded;
 
         public void Encode(Video video)
         {
 
-            Console.WriteLine("Encoding Video....");
+            Console.WriteLine($"Encoding Video with title: {video.Title}.....");
             Thread.Sleep(3000);
             //3. Raising of the method fom the publisher OnVideoEncoded();
             // Calling the method that will notify all the subscribers
-            OnVideoEncoded();
+            OnVideoEncoded(video);
            
 
         }
         
         // the convention is that the event PUBLISHER should be protected, virtual and void and start with the word "On"
-        protected virtual void OnVideoEncoded()
+        protected virtual void OnVideoEncoded(Video video)
         {
             if (VideoEncoded !=null)  // if there are any subscribers it should not be empty(null) Remember VideoEncoded is a list with pointers
             {
                 // whats is the source of the event? or who is publishing the event?
                 // the current class, so we write "this" as the source
-                VideoEncoded(this, EventArgs.Empty);
+                VideoEncoded(this, new VideoEventargs() { Video = video});
             }
            
         }
