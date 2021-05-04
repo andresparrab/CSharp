@@ -3,11 +3,6 @@ using System.Threading;
 
 namespace delegates
 {
-    public class IVideoEventargs : EventArgs
-    {
-        public Video Video { get; set; }
-    }
-
     public class VideoEventargs: EventArgs
     {
         public Video Video { get; set; }
