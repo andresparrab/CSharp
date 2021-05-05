@@ -28,7 +28,7 @@ namespace WPFUserInterface
 
             resultsWindow.Text += $"Total execution time: { elapsedMs }";
         }
-        //LOL
+        //LOL vad ska man göra nu då igen eller aldrig
         private async void executeAsync_Click(object sender, RoutedEventArgs e)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
